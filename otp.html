@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lansg="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/header.css" rel="stylesheet" type="text/css" media="screen,projection">
+    <link href="css/materialize.min.css" rel="stylesheet" type="text/css" media="screen,projection">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <title><b>Authenticate</b></title>
+    <style>
+        body
+        {
+            background-image: url("images.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .OTP
+        {
+            padding-top: 14%;
+            max-width: 75%;
+            margin-left: 15%;
+        }
+        div.container.center
+          {
+            padding-top: 30px;
+            width: 70%;
+          }
+
+    </style>
+    
+ <script type="text/javascript">
+history.pushState(null, null, '#');
+window.addEventListener('popstate', function(event) {
+history.pushState(null, null, '#');
+});
+
+// slight update to account for browsers not supporting e.which
+function disableF5(e) { if ((e.which || e.keyCode) == 116) e.preventDefault(); };
+// To disable f5
+    /* jQuery < 1.7 */
+$(document).bind("keydown", disableF5);
+/* OR jQuery >= 1.7 */
+$(document).on("keydown", disableF5);
+</script>
+</head>
+
+<body>
+
+<div class="OTP">
+<div class="container center">
+    <div class="section card" style="opacity: .9;">
+        <div class="row">
+            <div class="col l6 m10 s12 offset-l3 offset-m1">
+
+                <h3 style="margin-left:50%"><b>AUTHENTICATION</b></h3><br/>
+                <form method="POST" action="otp.php">
+
+                    <div class="input-field" style="margin-left:45%">
+                        <input type="text" id="otp" name="otp_password" class="validate"  maxlength="6" required/>
+                        <label for="otp"><b>Enter OTP</b></label><br/>
+                    </div><br/>
+                    <div class="row center">
+                    <!-- Add  target="_blank" for new tab-->
+                        <a href="otpgeneratedbackup.php"><button class="btn waves-effect waves-light" style="margin-left:47%" type="button" name="action"><b>Re-Send OTP</b>
+                            <i class="material-icons"></i>                          
+                        </button></a>
+                        <button class="btn waves-effect waves-light" style="margin-right: 30px;" type="submit" name="action">Submit
+                            <i class="material-icons"></i>                          
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.x.js"></script>
+<script src="js/materialize.js"></script>
+
+</body>
+</html>
+
